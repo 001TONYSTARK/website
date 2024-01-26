@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+   <header><h3>Electricity Bill calculator</h3></header>
+   <nav>
+    
+   </nav>
+   <script>
+    function fun(){
+        var total;
+        var a = document.getElementById("units").value;
+        if( a<=100){
+            total =  0;
+        }else if(a<=200){
+            total = (a-100)*2.25;
+        }
+        else if(a<=300){
+            total = (100*2.25)+((a-200)*4.5);
+
+        }else if(a<=400){
+            total = (100*2.25)+((a-200)*4.5);
+        }
+        else if(a<=500){
+            total = (100*2.25)+(200*4.5)+((a-400)*6);
+        }
+        else if(a<=600){
+            total = (300*4.5)+(100*6)+((a-500)*8);
+        }
+        else if(a<=800){
+            total = (300*4.5)+(100*6)+(100*8)+((a-600)*9);
+        }else if(a<=1000){
+            total = (300*4.5)+(100*6)+(100*8)+(200*9)+((a-800)*10);
+        }else{
+            total = (300*4.5)+(100*6)+(100*8)+(200*9)+(200*10)+((a-1000)*11);
+        }
+        document.getElementById("val1").innerHTML ="Total Bill is :"+total+"rs";
+        
+        
+    }
+</script>
+   <form method="GET" name="frm1">
+    
+    <div class="container">
+        <label for="units">Enter the units</label>&emsp;&emsp;<input type="number" id="units" min="0"/>
+        <input id="value" type="submit" onclick="fun(); return false;"/>
+        &emsp;
+        <p id="val1"></p>
+    </div>
+   </form>
+   
+</body>
+</html>
