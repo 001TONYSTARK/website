@@ -5,6 +5,7 @@
 }
 body{
     background-color: #282a35;
+    box-sizing:border-box;
 }
 header h3{
     width:100%;
